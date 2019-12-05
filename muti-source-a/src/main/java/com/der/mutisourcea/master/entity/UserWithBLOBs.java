@@ -1,4 +1,4 @@
-package com.der.multipledatasource.master.entity;
+package com.der.mutisourcea.master.entity;
 
 public class UserWithBLOBs extends User {
     private byte[] sslCipher;

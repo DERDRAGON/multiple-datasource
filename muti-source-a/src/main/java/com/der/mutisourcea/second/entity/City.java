@@ -1,4 +1,4 @@
-package com.der.multipledatasource.second.entity;
+package com.der.mutisourcea.second.entity;
 
 public class City {
     private Integer id;

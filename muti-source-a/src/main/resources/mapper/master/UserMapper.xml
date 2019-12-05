@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.der.multipledatasource.master.dao.UserMapper">
-  <resultMap id="BaseResultMap" type="com.der.multipledatasource.master.entity.User">
+<mapper namespace="UserMapper">
+  <resultMap id="BaseResultMap" type="User">
     <result column="id" jdbcType="INTEGER" property="id" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="description" jdbcType="VARCHAR" property="description" />
   </resultMap>
-  <insert id="insert" parameterType="com.der.multipledatasource.master.entity.User">
+  <insert id="insert" parameterType="User">
     insert into user (id, user_name, description
       )
     values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.der.multipledatasource.master.entity.User">
+  <insert id="insertSelective" parameterType="User">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -37,7 +37,7 @@
       </if>
     </trim>
   </insert>
-  <resultMap id="BaseResultMap" type="com.der.multipledatasource.master.entity.User">
+  <resultMap id="BaseResultMap" type="User">
     <id column="Host" jdbcType="CHAR" property="host" />
     <id column="User" jdbcType="CHAR" property="user" />
     <result column="Select_priv" jdbcType="CHAR" property="selectPriv" />
@@ -80,7 +80,7 @@
     <result column="password_lifetime" jdbcType="SMALLINT" property="passwordLifetime" />
     <result column="account_locked" jdbcType="CHAR" property="accountLocked" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.der.multipledatasource.master.entity.UserWithBLOBs">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="UserWithBLOBs">
     <result column="ssl_cipher" jdbcType="LONGVARBINARY" property="sslCipher" />
     <result column="x509_issuer" jdbcType="LONGVARBINARY" property="x509Issuer" />
     <result column="x509_subject" jdbcType="LONGVARBINARY" property="x509Subject" />
@@ -98,7 +98,7 @@
   <sql id="Blob_Column_List">
     ssl_cipher, x509_issuer, x509_subject, authentication_string
   </sql>
-  <select id="selectByPrimaryKey" parameterType="com.der.multipledatasource.master.entity.UserKey" resultMap="ResultMapWithBLOBs">
+  <select id="selectByPrimaryKey" parameterType="UserKey" resultMap="ResultMapWithBLOBs">
     select 
     <include refid="Base_Column_List" />
     ,
@@ -107,12 +107,12 @@
     where Host = #{host,jdbcType=CHAR}
       and User = #{user,jdbcType=CHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.der.multipledatasource.master.entity.UserKey">
+  <delete id="deleteByPrimaryKey" parameterType="UserKey">
     delete from user
     where Host = #{host,jdbcType=CHAR}
       and User = #{user,jdbcType=CHAR}
   </delete>
-  <insert id="insert" parameterType="com.der.multipledatasource.master.entity.UserWithBLOBs">
+  <insert id="insert" parameterType="UserWithBLOBs">
     insert into user (Host, User, Select_priv, 
       Insert_priv, Update_priv, Delete_priv, 
       Create_priv, Drop_priv, Reload_priv, 
@@ -146,7 +146,7 @@
       #{x509Issuer,jdbcType=LONGVARBINARY}, #{x509Subject,jdbcType=LONGVARBINARY}, #{authenticationString,jdbcType=LONGVARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.der.multipledatasource.master.entity.UserWithBLOBs">
+  <insert id="insertSelective" parameterType="UserWithBLOBs">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="host != null">
@@ -423,7 +423,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.der.multipledatasource.master.entity.UserWithBLOBs">
+  <update id="updateByPrimaryKeySelective" parameterType="UserWithBLOBs">
     update user
     <set>
       <if test="selectPriv != null">
@@ -559,7 +559,7 @@
     where Host = #{host,jdbcType=CHAR}
       and User = #{user,jdbcType=CHAR}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.der.multipledatasource.master.entity.UserWithBLOBs">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="UserWithBLOBs">
     update user
     set Select_priv = #{selectPriv,jdbcType=CHAR},
       Insert_priv = #{insertPriv,jdbcType=CHAR},
@@ -607,7 +607,7 @@
     where Host = #{host,jdbcType=CHAR}
       and User = #{user,jdbcType=CHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.der.multipledatasource.master.entity.User">
+  <update id="updateByPrimaryKey" parameterType="User">
     update user
     set Select_priv = #{selectPriv,jdbcType=CHAR},
       Insert_priv = #{insertPriv,jdbcType=CHAR},

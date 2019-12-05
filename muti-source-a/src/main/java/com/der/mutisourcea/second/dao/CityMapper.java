@@ -1,6 +1,6 @@
-package com.der.multipledatasource.second.dao;
+package com.der.mutisourcea.second.dao;
 
-import com.der.multipledatasource.second.entity.City;
+import com.der.mutisourcea.second.entity.City;
 
 public interface CityMapper {
     int deleteByPrimaryKey(Integer id);

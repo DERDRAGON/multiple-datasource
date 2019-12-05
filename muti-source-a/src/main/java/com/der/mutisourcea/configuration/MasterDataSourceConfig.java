@@ -1,4 +1,4 @@
-package com.der.multipledatasource.configuration;
+package com.der.mutisourcea.configuration;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
