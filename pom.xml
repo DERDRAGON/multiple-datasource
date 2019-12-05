@@ -13,6 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>multiple-datasource</name>
     <description>Demo project for Spring Boot</description>
+    <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -71,28 +72,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.2</version>
-                <configuration>
-                    <configurationFile>muti-source-a/src/main/resources/generator/generatorConfig.xml</configurationFile>
-                    <overwrite>true</overwrite>
-                    <verbose>true</verbose>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>8.0.18</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.der</groupId>
-                        <artifactId>mybatis-generator-plugin</artifactId>
-                        <version>0.0.1-SNAPSHOT</version>
-                    </dependency>
-                </dependencies>
             </plugin>
         </plugins>
     </build>
