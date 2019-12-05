@@ -24,7 +24,7 @@ import javax.sql.DataSource;
 @MapperScan(basePackages = MasterDataSourceConfig.PACKAGE, sqlSessionFactoryRef = "masterSqlSessionFactory")
 public class MasterDataSourceConfig {
 
-    static final String PACKAGE = "com.der.multipledatasource.master.dao";
+    static final String PACKAGE = "com.der.mutisourcea.master.dao";
     static final String MAPPER_LOCATION = "classpath:mapper/master/**/*.xml";
 
     @Value("${master.datasource.url}")

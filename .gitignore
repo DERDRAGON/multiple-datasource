@@ -33,3 +33,6 @@ build/
 muti-source-a/.mvn/
 muti-source-a/mvnw
 muti-source-a/mvnw.cmd
+miuti-source-b/.mvn/
+miuti-source-b/mvnw
+miuti-source-b/mvnw.cmd

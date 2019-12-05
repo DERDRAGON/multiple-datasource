@@ -1,6 +1,6 @@
-package com.der.mutisourcea.second.dao;
+package com.der.miutisourceb.dao;
 
-import com.der.mutisourcea.second.entity.Namespace;
+import com.der.miutisourceb.entity.Namespace;
 
 import java.util.List;
 
@@ -53,9 +53,5 @@ public interface NamespaceMapper {
      */
     int updateByPrimaryKey(Namespace record);
 
-    /**
-     * 查询所有的内容
-     * @return List<Namespace>
-     */
     List<Namespace> selectAll();
 }

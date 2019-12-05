@@ -8,8 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <packaging>jar</packaging>
-    <artifactId>muti-source-a</artifactId>
-    <name>muti-source-a</name>
+    <artifactId>miuti-source-b</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>miuti-source-b</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

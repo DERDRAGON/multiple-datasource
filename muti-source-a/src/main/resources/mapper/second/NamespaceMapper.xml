@@ -171,4 +171,8 @@
       DataChange_LastTime = #{datachangeLasttime,jdbcType=TIMESTAMP}
     where Id = #{id,jdbcType=INTEGER}
   </update>
+    <select id="selectAll" resultMap="BaseResultMap">
+      SELECT <include refid="Base_Column_List"/>
+      FROM namespace
+    </select>
 </mapper>
