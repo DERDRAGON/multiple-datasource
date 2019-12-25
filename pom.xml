@@ -24,6 +24,7 @@
 
     <modules>
         <module>muti-source-a</module>
+        <module>miuti-source-b</module>
     </modules>
 
     <dependencies>
