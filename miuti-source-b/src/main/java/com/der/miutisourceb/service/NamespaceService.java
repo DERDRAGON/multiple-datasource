@@ -13,5 +13,5 @@ public interface NamespaceService {
      * 查询所有
      * @return
      */
-    List<Namespace> selectAll(String environment);
+    List<Namespace> selectAll();
 }

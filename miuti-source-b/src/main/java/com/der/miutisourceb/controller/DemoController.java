@@ -4,7 +4,6 @@ import com.der.miutisourceb.entity.Namespace;
 import com.der.miutisourceb.service.NamespaceService;
 import com.google.common.collect.Maps;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -22,10 +21,10 @@ public class DemoController {
     private NamespaceService namespaceService;
 
     @RequestMapping("demo")
-    public Map<String, Object> demo(@RequestParam(required = true) String environment) {
+    public Map<String, Object> demo() {
         Map<String, Object> map = Maps.newHashMap();
         map.put("success", true);
-        List<Namespace> namespaces = namespaceService.selectAll(environment);
+        List<Namespace> namespaces = namespaceService.selectAll();
         map.put("data", namespaces);
         return map;
     }
